@@ -1,0 +1,10 @@
+{
+    "GPT" : {
+        "Proxy": "https://api.openai-proxy.org/v1",
+        "APIs": ["GPT-3.5-Turbo-0125", "GPT-4"]
+    },
+    "Claude" : {
+        "Proxy": "https://api.openai-proxy.org/anthropic",
+        "APIs": ["Claude-3-Haiku-20240307"]
+    }
+}

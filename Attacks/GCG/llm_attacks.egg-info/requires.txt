@@ -1,0 +1,3 @@
+fschat==0.2.23
+ml_collections
+transformers==4.31.0
