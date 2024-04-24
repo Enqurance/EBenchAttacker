@@ -14,10 +14,14 @@ def Attack(attack_model, target_model, data_path, params):
     judge_model = "GPT-3.5-Turbo-0125"
     for i in tqdm(range(len(data)), desc="Processing"):
         item = data[i]
-        command = "python3 ./Attacks/PAIR/main.py --attack-model " + attack_model + " --target-model " + \
-            target_model + " --judge-model " + judge_model + " --goal \"" + item["English"] + \
-                "\" --target-str \"" + item["Goal"] + "\" --n-streams 1 --n-iterations 1 " + \
-                "--api-use-proxy " + str(params["api_use_proxy"]) + " --api-info-path " + params["api_info_path"]
+        command = "python3 ./Attacks/PAIR/main.py --attack-model " + attack_model + \
+            " --target-model " + target_model + \
+            " --judge-model " + judge_model + \
+            " --goal \"" + item["English"] + \
+            "\" --target-str \"" + item["Goal"] + \
+            "\" --n-streams 1 --n-iterations 1" + \
+            " --api-use-proxy " + str(params["api_use_proxy"]) + \
+            " --api-info-path " + params["api_info_path"]
         subprocess.run(command, shell=True, text=True)
         
         

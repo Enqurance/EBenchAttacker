@@ -145,7 +145,6 @@ class Claude():
     API_KEY = os.getenv("ANTHROPIC_API_KEY")
    
     def __init__(self, model_name, use_proxy, proxy) -> None:
-        print(model_name)
         self.model_name = model_name
         self.use_proxy = proxy
         self.proxy = proxy
@@ -176,7 +175,7 @@ class Claude():
         for _ in range(self.API_MAX_RETRY):
             try:
                 completion = self.model.completions.create(
-                    model=self.model_name,
+                    model=self.model_name.lower(),
                     max_tokens_to_sample=max_n_tokens,
                     prompt=conv,
                     temperature=temperature,

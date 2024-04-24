@@ -252,12 +252,12 @@ def get_model_path_and_template(model_name):
             "path":BAICHUAN_PATH,
             "template":"llama-2"
         },
-        "Claude-Instant":{
-            "path":"claude-instant-1",
+        "Claude-Instant-1.2":{
+            "path":"claude-instant-1.2",
             "template":"claude-instant-1"
         },
         "Claude-3-Haiku-20240307":{
-            "path":"claude-instant-1",
+            "path":"Claude-3-Haiku-20240307",
             "template":"claude-instant-1"
         }
     }
