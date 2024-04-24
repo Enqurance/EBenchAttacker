@@ -40,7 +40,7 @@ export ANTHROPIC_API_KEY='<Your API Key>'
 
 ```bash
 cd LLMAttacks
-python main.py --attacks pair, gcg
+python main.py --attacks pair gcg --dataset small --use_proxy True
 ```
 
 - **Gather results**
