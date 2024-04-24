@@ -2,7 +2,7 @@
 
 Hello, here is the official repository of EBenchAttacker, an evaluation tool for LLMs alignment capabilities. This tool is developed by Enqurance Lin, an UG. student at Beihang University, China. The development of the tool is supported by Beijing Advanced Innovation Center for Big Data and Brain Computing.
 
-![EBenchAttacker](https://raw.githubusercontent.com/Enqurance/Figures/main/202404221025029.jpg?w=164&h=164&fit=crop&auto=format)
+![EBenchAttacker](https://raw.githubusercontent.com/Enqurance/Figures/main/202404241923138.png)
 
 The presentation website is https://ebenchattacker.site/.
 
