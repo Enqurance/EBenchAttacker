@@ -5,6 +5,7 @@ LLAMA_PATH = "/home/LAB/gongtx/models/llama-2-7b-chat-hf"
 BAICHUAN_PATH = "/home/LAB/gaoshiqi/models/Baichuan2-7B-Chat"
 GEMMA_PATH = "/home/LAB/gaoshiqi/models/gemma-2b"
 CHATGLM_PATH = "/home/LAB/gaoshiqi/models/chatglm3-6b"
+LLAMA3_PATH = "/home/LAB/gaoshiqi/models/llama-3-8B"
 
 ATTACK_TEMP = 1
 TARGET_TEMP = 0

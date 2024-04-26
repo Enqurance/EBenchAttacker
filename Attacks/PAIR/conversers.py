@@ -8,7 +8,7 @@ import json
 
 sys.path.append("./Attacks")
 
-from assets.ModelPath import LLAMA_PATH, BAICHUAN_PATH, GEMMA_PATH, CHATGLM_PATH, ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
+from assets.ModelPath import LLAMA_PATH, LLAMA3_PATH, BAICHUAN_PATH, GEMMA_PATH, CHATGLM_PATH, ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
 
 def load_attack_and_target_models(args):
     # Load attack model and tokenizer
@@ -240,6 +240,10 @@ def get_model_path_and_template(model_name):
             "path":LLAMA_PATH,
             "template":"llama-2"
         },
+        "LLaMA-3-8B":{
+            "path":LLAMA3_PATH,
+            "template":"llama-2"
+        },
         "Gemma-2B":{
             "path":GEMMA_PATH,
             "template":"llama-2"
@@ -252,12 +256,12 @@ def get_model_path_and_template(model_name):
             "path":BAICHUAN_PATH,
             "template":"llama-2"
         },
-        "Claude-Instant":{
-            "path":"claude-instant-1",
+        "Claude-Instant-1.2":{
+            "path":"claude-instant-1.2",
             "template":"claude-instant-1"
         },
         "Claude-3-Haiku-20240307":{
-            "path":"claude-instant-1",
+            "path":"Claude-3-Haiku-20240307",
             "template":"claude-instant-1"
         }
     }
