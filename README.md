@@ -2,7 +2,9 @@
 
 Hello, here is the official repository of EBenchAttacker, an evaluation tool for LLMs alignment capabilities. This tool is developed by Enqurance Lin, an UG. student at Beihang University, China. The development of the tool is supported by Beijing Advanced Innovation Center for Big Data and Brain Computing.
 
-![EBenchAttacker](https://raw.githubusercontent.com/Enqurance/Figures/main/202404221025029.jpg?w=164&h=164&fit=crop&auto=format)
+![EBenchAttacker](https://raw.githubusercontent.com/Enqurance/Figures/main/202404241923138.png)
+
+The presentation website is https://ebenchattacker.site/.
 
 ## Quick Start
 
@@ -27,7 +29,7 @@ You can modify the file `LLMAttacks/Attacks/assets/ModelPath.py` to use the mode
 
 - **Add your API keys to your environment**
 
-If you need to test the API model, please import your `ANTHROPIC_KEY_API` and `OPENAI_KEY_API` into environment variables.
+If you need to test API models, please import your `ANTHROPIC_KEY_API` and `OPENAI_KEY_API` into environment variables.
 
 ```bash
 export OPENAI_API_KEY='<Your API Key>'
@@ -38,10 +40,10 @@ export ANTHROPIC_API_KEY='<Your API Key>'
 
 ```bash
 cd LLMAttacks
-python main.py --attacks pair, gcg
+python main.py --attacks pair gcg --dataset small --use_proxy True
 ```
 
-- **Results analysis**
+- **Gather results**
 
 You can gather results under the folder `./LLMAttacks/results` for analyzing. Different attack methods may produce experimental data in different formats. If you're interested in analyzing this data on your own, it's essential to have a basic understanding of the methods involved.
 
@@ -72,7 +74,7 @@ used_token = 0
 
 
 def query():
-  	content = "{Question: <...>, Response: <...>}"
+    content = "{Question: <...>, Response: <...>}"
     global used_token
     response = client.chat.completions.create(
         model="gpt-3.5-turbo-0125",

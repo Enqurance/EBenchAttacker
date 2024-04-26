@@ -2,7 +2,11 @@ import torch
 from fastchat import model
 
 def load_conversation_template(template_name):
+<<<<<<< HEAD
     if 'llama' in template_name.lower():
+=======
+    if template_name == 'llama2':
+>>>>>>> a47c529f25c87fe6d3b731287fe4ba9e29c23438
         template_name = 'llama-2'
     conv_template = model.get_conversation_template(template_name)
     if conv_template.name == 'zero_shot':
