@@ -104,7 +104,7 @@ if __name__ == '__main__':
         "--target-model",
         default = "LLaMA-2-7B-chat-hf",
         help = "Name of target model.",
-        choices=["LLaMA-2-7B-chat-hf", "Gemma-2B", "ChatGLM3-6B", "Baichuan2-7B-Chat", 'LLaMA-3-8B',
+        choices=["LLaMA-2-7B-chat-hf", "Gemma-2B", "ChatGLM3-6B", "Baichuan2-7B-Chat", 'LLaMA-3-8B-Instruct',
                  "GPT-3.5-Turbo-0125", "GPT-4", "Claude-Instant-1.2", "Claude-3-Haiku-20240307"]
     )
     parser.add_argument(

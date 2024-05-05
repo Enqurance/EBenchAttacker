@@ -5,7 +5,7 @@ LLAMA_PATH = "/home/LAB/gongtx/models/llama-2-7b-chat-hf"
 BAICHUAN_PATH = "/home/LAB/gaoshiqi/models/Baichuan2-7B-Chat"
 GEMMA_PATH = "/home/LAB/gaoshiqi/models/gemma-2b"
 CHATGLM_PATH = "/home/LAB/gaoshiqi/models/chatglm3-6b"
-LLAMA3_PATH = "/home/LAB/gaoshiqi/models/llama-3-8B"
+LLAMA3_PATH = "/home/LAB/gaoshiqi/models/Llama-3-8B-Instruct"
 
 ATTACK_TEMP = 1
 TARGET_TEMP = 0
@@ -20,4 +20,6 @@ GPTFUZZ_PATH = "/home/LAB/gaoshiqi/models/GPTFuzz"
 """
     Path to multimodal large language model (supports image input)
 """
-YI_PATH = "/home/LAB/gaoshiqi/models/Yi-VL-6B"
+
+LLAVA_PATH = "/home/LAB/gaoshiqi/models/llava-v1.5-7b"
+QWEN_PATH = "/home/LAB/gaoshiqi/models/Qwen-VL-Chat"

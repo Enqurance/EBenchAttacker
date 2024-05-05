@@ -8,7 +8,7 @@ import json
 def GCGTransferAttack(model_info, data_path, time_str):
     model_names = model_info.keys()
     for model in model_names:
-        if model.split("-")[0] not in data_path:
+        if model not in data_path:
             info = "Start GCG Transfer Attack on " + model + ". Using dataset " + data_path
             InfoTool.PrintWithBorders(info)
             data = DL.DataLoader(data_path)

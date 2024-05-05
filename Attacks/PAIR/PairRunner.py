@@ -19,7 +19,7 @@ def Attack(attack_model, target_model, data_path, params):
             " --judge-model " + judge_model + \
             " --goal \"" + item["English"] + \
             "\" --target-str \"" + item["Goal"] + \
-            "\" --n-streams 1 --n-iterations 1" + \
+            "\" --n-streams 2 --n-iterations 25" + \
             " --api-use-proxy " + str(params["api_use_proxy"]) + \
             " --api-info-path " + params["api_info_path"]
         subprocess.run(command, shell=True, text=True)

@@ -5,11 +5,14 @@ import subprocess
 
 sys.path.append("./Attacks")
 
-from assets.ModelPath import LLAMA_PATH, BAICHUAN_PATH, GEMMA_PATH, CHATGLM_PATH, GPTFUZZ_PATH
+from assets.ModelPath import LLAMA_PATH, LLAMA3_PATH, BAICHUAN_PATH, GEMMA_PATH, CHATGLM_PATH, GPTFUZZ_PATH
 
 model_dict={
     "LLaMA-2-7B-chat-hf":{
         "path":LLAMA_PATH,
+    },
+    "LLaMA-3-8B-Instruct":{
+        "path":LLAMA3_PATH,
     },
     "Gemma-2B":{
         "path":GEMMA_PATH,

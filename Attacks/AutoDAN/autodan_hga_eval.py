@@ -90,7 +90,7 @@ def get_developer(model_name):
         "ChatGLM3-6B": "THUDM",
         "Gemma-2B": "Google",
         "Baichuan2-7B-Chat": "Baichuan-inc",
-        "LLaMA-3-8B": "Meta",
+        "LLaMA-3-8B-Instruct": "Meta",
     }
     return developer_dict[model_name]
 

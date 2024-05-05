@@ -18,8 +18,25 @@ class ModelLoader():
         
 
     def query_model(self, query):
-        input_ids = self.tokenizer(query, return_tensors="pt").to(self.device)
-        outputs = self.model.generate(**input_ids, max_new_tokens=192, do_sample=True)
+        # Prompt engineering for LLaMA-3-8B-Instruct
+        if self.model_name == "LLaMA-3-8B-Instruct":
+            messages = [
+                {"role": "system", "content": "You are a helpful chatbot who can answer question proposed by user. Please answer the following question."},
+                {"role": "user", "content": query},
+            ]
+            input_ids = self.tokenizer.apply_chat_template(
+                messages,
+                add_generation_prompt=True,
+                return_tensors="pt"
+            ).to(self.model.device)
+            terminators = [
+                self.tokenizer.eos_token_id,
+                self.tokenizer.convert_tokens_to_ids("<|eot_id|>")
+            ]
+            outputs = self.model.generate(input_ids, eos_token_id=terminators, max_new_tokens=192, do_sample=True)
+        else:
+            input_ids = self.tokenizer(query, return_tensors="pt").to(self.device)
+            outputs = self.model.generate(**input_ids, max_new_tokens=192, do_sample=True)
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
     
     

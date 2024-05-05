@@ -240,7 +240,7 @@ def get_model_path_and_template(model_name):
             "path":LLAMA_PATH,
             "template":"llama-2"
         },
-        "LLaMA-3-8B":{
+        "LLaMA-3-8B-Instruct":{
             "path":LLAMA3_PATH,
             "template":"llama-2"
         },

@@ -13,7 +13,7 @@ model_dict={
     "Baichuan2-7B-Chat":{
         "name": "baichuan",
     },
-    "LLaMA-3-8B":{
+    "LLaMA-3-8B-Instruct":{
         "name": "llama3",
     }
 }

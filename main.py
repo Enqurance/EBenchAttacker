@@ -2,7 +2,7 @@ import argparse
 from datetime import datetime
 import torch
 from Attacks.assets.ModelPath import LLAMA3_PATH, LLAMA_PATH, GEMMA_PATH, CHATGLM_PATH, BAICHUAN_PATH
-from Attacks.assets.ModelPath import YI_PATH
+from Attacks.assets.ModelPath import LLAVA_PATH, QWEN_PATH
 
 import Attacks.Default.Runner as Runner
 import Attacks.PAIR.PairRunner as PairRunner
@@ -24,7 +24,7 @@ parser.add_argument('--attacks',type=str,
                     help='This list assigns the methods for attacking')
 parser.add_argument('--dataset', type=str, choices=['small', 'medium', 'origin', 'test'],
                     help='This arg. assigns the dataset to use')
-parser.add_argument('--transfer_dataset', type=str, choices=['llama', 'gemma', 'baichuan'], 
+parser.add_argument('--transfer_dataset', type=str, choices=['LLaMA-2-7B-chat-hf', 'Gemma-2B', 'Baichuan2-7B-Chat'], 
                     help='This arg. assigns the dataset to use when using GCG transfer attack')
 
 parser.add_argument('--test-api', type=bool, default=False, help='This arg. determines whether to test APIs or not')
@@ -52,11 +52,12 @@ model_paths = {
     # "ChatGLM3-6B": CHATGLM_PATH,
     # "LLaMA-2-7B-chat-hf" : LLAMA_PATH,
     # "Gemma-2B": GEMMA_PATH,
-    "LLaMA-3-8B": LLAMA3_PATH
+    "LLaMA-3-8B-Instruct": LLAMA3_PATH
 }
 
 multimodal_model_paths = {
-    "Yi-VL-6B": YI_PATH
+    "Qwen-VL-Chat": QWEN_PATH,
+    "LLaVA-v1.5-7B": LLAVA_PATH
 }
 
 data_paths = {
@@ -69,9 +70,9 @@ data_paths = {
 
 transfer_data_paths = {
     None: "./data/EBench_GCG_LLaMA-2-7B.json",
-    "llama": "./data/EBench_GCG_LLaMA-2-7B.json",
-    "gemma": "./data/EBench_GCG_Gemma-2B.json",
-    "baichuan": "./data/EBench_GCG_Baichuan2-7B.json"
+    'LLaMA-2-7B-chat-hf': "./data/EBench_GCG_LLaMA-2-7B.json",
+    'Gemma-2B': "./data/EBench_GCG_Gemma-2B.json",
+    'Baichuan2-7B-Chat': "./data/EBench_GCG_Baichuan2-7B.json"
 }
 
 def Attacking(params):
@@ -121,7 +122,7 @@ def Attacking(params):
             case "autodan":
                 AutoDANRunner.AutoDANAttack(model_paths, data_path_csv, time_str)
             case "visual":
-                VisualAttackRunner(model_paths, time_str)
+                VisualAttackRunner.VisualAttack(multimodal_model_paths, time_str)
             case _:
                 pass
             
